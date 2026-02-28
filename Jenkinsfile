@@ -10,7 +10,7 @@ pipeline {
 
         HUB_BACKEND = "pratham0010/my-new-app-backend"
         HUB_FRONTEND = "pratham0010/my-new-app-frontend"
-        HUB_AGENT = "upratham00106/my-new-app-ai-agent"
+        HUB_AGENT = "pratham0010/my-new-app-ai-agent"
 
         DOCKER_CREDENTIALS_ID = "dockerhub-credentials"
     }
@@ -26,7 +26,10 @@ pipeline {
 
         stage('Build Docker Images') {
             steps {
-                bat 'docker compose build'
+                bat '''
+                docker compose build
+                docker images
+                '''
             }
         }
 
@@ -37,7 +40,9 @@ pipeline {
                     usernameVariable: 'USER',
                     passwordVariable: 'PASS')]) {
 
-                    bat "docker login -u %USER% -p %PASS%"
+                    bat '''
+                    echo %PASS% | docker login -u %USER% --password-stdin
+                    '''
                 }
             }
         }
@@ -64,8 +69,10 @@ pipeline {
 
         stage('Deploy Containers') {
             steps {
-                bat 'docker compose down'
-                bat 'docker compose up -d'
+                bat '''
+                docker compose down
+                docker compose up -d
+                '''
             }
         }
     }
