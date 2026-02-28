@@ -4,13 +4,13 @@ pipeline {
     environment {
         DOCKER_HUB_USER = "pratham0010"
 
-        LOCAL_BACKEND = "my-new-app-backend"
-        LOCAL_FRONTEND = "my-new-app-frontend"
-        LOCAL_AGENT = "my-new-app-ai-agent"
+        LOCAL_BACKEND = "pratham-devops-app-backend"
+        LOCAL_FRONTEND = "pratham-devops-app-frontend"
+        LOCAL_AGENT = "pratham-devops-app-ai-agent"
 
-        HUB_BACKEND = "pratham0010/my-new-app-backend"
-        HUB_FRONTEND = "pratham0010/my-new-app-frontend"
-        HUB_AGENT = "pratham0010/my-new-app-ai-agent"
+        HUB_BACKEND = "pratham0010/pratham-devops-app-backend"
+        HUB_FRONTEND = "pratham0010/pratham-devops-app-frontend"
+        HUB_AGENT = "pratham0010/pratham-devops-app-ai-agent"
 
         DOCKER_CREDENTIALS_ID = "dockerhub-credentials"
     }
