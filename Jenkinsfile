@@ -12,7 +12,7 @@ pipeline {
         HUB_FRONTEND = "pratham0010/pratham-devops-app-frontend"
         HUB_AGENT = "pratham0010/pratham-devops-app-ai-agent"
 
-        DOCKER_CREDENTIALS_ID = "dockerhub-credentials"
+        DOCKER_CREDENTIALS_ID = "dockerhub-credentials" 
     }
 
     stages {

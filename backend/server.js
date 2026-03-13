@@ -46,10 +46,15 @@ mongoose.connect(process.env.MONGO_URI)
 /* ===============================
    MODEL
 =================================*/
-const Todo = mongoose.model("Todo", {
+
+const SchemaData = new mongoose.Schema({
   title: String,
   completed: Boolean
+},{
+  timestamps:true
 });
+
+const Todo = mongoose.model("Todo", SchemaData );
 
 /* ===============================
    ROUTES
