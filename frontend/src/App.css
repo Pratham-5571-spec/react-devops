@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.todo-item small{
+  padding-left: 3px;
+  color: lightblue;
+}
